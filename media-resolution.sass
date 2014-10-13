@@ -1,0 +1,70 @@
+//
+	Media Queries feature: Resolution
+	Sass polyfill
+	To avoid of prefix hell before [Autoprefixer](https://github.com/postcss/autoprefixer/issues/122) and [Can I Use](https://github.com/Fyrd/caniuse/pull/767) will figure it out.
+	Got it [here](https://gist.github.com/ffdead/4215169) and upgrade a little
+//
+	@mixin: +resolution($prefix, $dppx)
+	A base mixin to rule them all. `print` is included because of carrying for the enemy.
+	@param: $prefix
+	Type: string
+	Possible values: `min` and `max` to print `min`/`max``-``resolution`
+	@param: $dppx
+	Type: positive (i hope) integer
+	Possible values: `1`, `1.2`, `2`, `10`
+=resolution($prefix, $dppx)
+	// 1px = 96dpi
+	$dpi: $dppx*96
+	$separator: comma
+	$rule-webkit:'(-webkit-#{$prefix}-device-pixel-ratio: #{$dppx})'
+	$rule-moz:'(#{$prefix}--moz-device-pixel-ratio: #{$dppx})'
+	$rule-o:'(-o-#{$prefix}-device-pixel-ratio: #{$dppx*2}/2)'
+	$rule-device:'(#{$prefix}-device-pixel-ratio: #{$dppx})'
+	$rule-dpi:'(#{$prefix}-resolution: #{$dpi}dpi)'
+	$rule-dppx:'(#{$prefix}-resolution: #{$dppx}dppx)'
+	$rules-ratio: $rule-webkit,$rule-moz,$rule-o,$rule-device,$rule-dpi,$rule-dppx
+	$rules: print
+	@each $rule in $rules-ratio
+		$rules: append($rules, unquote($rule), $separator)
+	@media #{$rules}
+		@content
+//
+	@mixin: +min-resolution($dppx)
+	Polyfill to `@media (min-resolution)`
+	@param: $dppx
+	The same from `+resolution` mixin. Wrap your styles with this like you do it with a regular `@media` rule.
+=min-resolution($dppx)
+	+resolution(min, $dppx)
+		@content
+//
+	@mixin: +max-resolution($dppx)
+	Polyfill to `@media (max-resolution)`
+	@param: $dppx
+	The same from `+resolution` mixin. Wrap your styles with this like you do it with a regular `@media` rule.
+=max-resolution($dppx)
+	+resolution(max, $dppx)
+		@content
+//
+	@variable: $resolution-<xx?>dpi
+	Densities of screen following to [Android specification](http://developer.android.com/guide/practices/screens_support.html#range). Extend this if you want to. I got here only densities from @1x to @2x.
+$resolution-mdpi: 1
+$resolution-hdpi: 1.5
+$resolution-xhdpi: 2.0
+//
+	@mixin: +screen-mdpi
+	Wrap your style in this mixin to limit them on normal-dpi (@1x) screens
+=screen-mdpi
+	+min-resolution($resolution-mdpi)
+		@content
+//
+	@mixin: +screen-mdpi
+	Wrap your style in this mixin to limit them on high-dpi (@1.5x) screens
+=screen-hdpi
+	+min-resolution($resolution-hdpi)
+		@content
+//
+	@mixin: +screen-mdpi
+	Wrap your style in this mixin to limit them on extra-high-dpi (@2x) screens
+=screen-xhdpi
+	+min-resolution($resolution-xhdpi)
+		@content

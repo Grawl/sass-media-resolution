@@ -1,0 +1,19 @@
+@chatset "UTF-8";
+.image {
+  background-image: url("image.png"); }
+  @media print, (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .image {
+      background-image: url("image@2x.png"); } }
+
+@media print, (-webkit-max-device-pixel-ratio: 2), (max--moz-device-pixel-ratio: 2), (-o-max-device-pixel-ratio: 4 / 2), (max-device-pixel-ratio: 2), (max-resolution: 192dpi), (max-resolution: 2dppx) {
+  .image {
+    background-image: url("image@2x.png"); } }
+@media print, (-webkit-max-device-pixel-ratio: 1), (max--moz-device-pixel-ratio: 1), (-o-max-device-pixel-ratio: 2 / 2), (max-device-pixel-ratio: 1), (max-resolution: 96dpi), (max-resolution: 1dppx) {
+  .image {
+    background-image: url("image@1x.png"); } }
+
+@media print, (-webkit-min-device-pixel-ratio: 1.1), (min--moz-device-pixel-ratio: 1.1), (-o-min-device-pixel-ratio: 2.2 / 2), (min-device-pixel-ratio: 1.1), (min-resolution: 105.6dpi), (min-resolution: 1.1dppx) {
+  .image {
+    background-image: url("image@2x.png"); } }
+
+/*# sourceMappingURL=test.css.map */

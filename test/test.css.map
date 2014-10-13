@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAGA,MAAM;EACF,gBAAgB,EAAE,gBAAgB;ECwBrC,+MAAgB;IDzBjB,MAAM;MAGE,gBAAgB,EAAE,mBAAmB;;ACsB5C,uMAAgB;EDnBb,MAAM;IACF,gBAAgB,EAAE,mBAAmB;ACkB5C,sMAAgB;EDfb,MAAM;IAGE,gBAAgB,EAAE,mBAA2B;;ACYxD,mNAAgB;EDfb,MAAM;IAGE,gBAAgB,EAAE,mBAA2B",
+"sources": ["test.sass","../media-resolution.sass"],
+"names": [],
+"file": "test.css"
+}

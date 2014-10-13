@@ -1,0 +1,28 @@
+{
+  "name": "sass-media-resolution",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Grawl/sass-media-resolution",
+  "authors": [
+    "Daniil Pronin <mail@grawl.ru>"
+  ],
+  "description": "Media Queries Resolution feature Sass polyfill",
+  "main": "media-resolution.sass",
+  "keywords": [
+    "sass",
+    "mixin",
+    "polyfill",
+    "media",
+    "queries",
+    "resolution",
+    "retina",
+    "hidpi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

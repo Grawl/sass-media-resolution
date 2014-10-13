@@ -1,0 +1,17 @@
+@chatset "UTF-8"
+@import ../media-resolution
+//* Test #1
+.image
+    background-image: url('image.png')
+    +screen-hdpi
+        background-image: url('image@2x.png')
+//* Test #2
++max-resolution(2)
+    .image
+        background-image: url('image@2x.png')
+//* Test #3
+@each $prefix,$dppx in ((max,1),(min,1.1))
+    .image
+        +resolution($prefix, $dppx)
+            $dppx: ceil($dppx)
+            background-image: url('image@'+$dppx+'x.png')
