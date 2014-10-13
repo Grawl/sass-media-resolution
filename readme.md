@@ -85,6 +85,7 @@ Or do it with your favorite Sass tool like [CodeKit](http://incident57.com/co
 ## Reference
 
 - There is an issue [#122](https://github.com/postcss/autoprefixer/issues/122) on Autoprefixer that depends on Can I Use database update. When it will be updated, this repository will not needed anymore for those who using Autoprefixer. But we need to wait. I hate waiting.
+- [PPI Calculator](https://www.sven.de/dpi/) – if you want to know how much `ppi` you screen have.
 
 ## Thanks
 
