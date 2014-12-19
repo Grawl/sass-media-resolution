@@ -75,7 +75,7 @@ If you want to use more predefined things such as `+max-resolution` predetermina
 
 ### Variables
 
-Important part of a whole system is resolution variables based on Google's specification:
+Important part of a whole system is resolution variables based on [Google's specification](http://developer.android.com/guide/practices/screens_support.html):
 
 ```sass
 $resolution-mdpi: 1
