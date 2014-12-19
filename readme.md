@@ -58,6 +58,31 @@ Remember that `xhdpi` is like Retina in Android terminology and equals to `2
 
 See `tests/` for more information about how it works.
 
+## Available mixins
+
+Name | Purpose
+---|---
+`=resolution($prefix, $dppx)` | Base mixin to omit prefixes and browser specificities
+`=min-resolution($dppx)` | Predefined `+resolution` mixin with `$prefix: min`
+`=max-resolution($dppx)` | Predefined `+resolution` mixin with `$prefix: max`
+`=screen-mdpi` | Predefined `+min-resolution` mixin with `$dppx: $resolution-mdpi` (1)
+`=screen-hdpi` | Predefined `+min-resolution` mixin with `$dppx: $resolution-hdpi` (1.5)
+`=screen-xhdpi` | Predefined `+min-resolution` mixin with `$dppx: $resolution-xhdpi` (2.0)
+
+All mixins are predefined for ease of use.
+
+If you want to use more predefined things such as `+max-resolution` predeterminations with all resolutions – you are welcome to PR or just add an issue.
+
+### Variables
+
+Important part of a whole system is resolution variables based on Google's specification:
+
+```sass
+$resolution-mdpi: 1
+$resolution-hdpi: 1.5
+$resolution-xhdpi: 2.0
+```
+
 ## Install via Bower
 
 ```bash
