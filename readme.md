@@ -19,7 +19,7 @@ If you want to engage your stylesheet with “retina-ready” images (actually
 
 Looking bad, do you?
 
-I suggest a better way to do this: for anything you do with stylesheets there is a **Sass mixin!** *Or Ruby Sass extension, if you are CSS geek.*
+I suggest a better way to do this: for anything you do with stylesheets there is a **Sass mixin!** *Or Ruby Sass extension, if you are CSS geek. Or Grunt/Gulp task.*
 
 ## Using
 
