@@ -1,8 +1,6 @@
 //
 	Media Queries feature: Resolution
-	Sass polyfill
-	To avoid of prefix hell before [Autoprefixer](https://github.com/postcss/autoprefixer/issues/122) and [Can I Use](https://github.com/Fyrd/caniuse/pull/767) will figure it out.
-	Got it [here](https://gist.github.com/ffdead/4215169) and upgrade a little
+	Sass mixins library
 //
 	@mixin: +resolution($prefix, $dppx)
 	A base mixin to rule them all. `print` is included because of carrying for the enemy.
@@ -15,18 +13,7 @@
 =resolution($prefix, $dppx)
 	// 1px = 96dpi
 	$dpi: $dppx*96
-	$separator: comma
-	$rule-webkit:'(-webkit-#{$prefix}-device-pixel-ratio: #{$dppx})'
-	$rule-moz:'(#{$prefix}--moz-device-pixel-ratio: #{$dppx})'
-	$rule-o:'(-o-#{$prefix}-device-pixel-ratio: #{$dppx*2}/2)'
-	$rule-device:'(#{$prefix}-device-pixel-ratio: #{$dppx})'
-	$rule-dpi:'(#{$prefix}-resolution: #{$dpi}dpi)'
-	$rule-dppx:'(#{$prefix}-resolution: #{$dppx}dppx)'
-	$rules-ratio: $rule-webkit,$rule-moz,$rule-o,$rule-device,$rule-dpi,$rule-dppx
-	$rules: print
-	@each $rule in $rules-ratio
-		$rules: append($rules, unquote($rule), $separator)
-	@media #{$rules}
+	@media (#{$prefix}-resolution: #{$dppx}dppx)
 		@content
 //
 	@mixin: +min-resolution($dppx)
