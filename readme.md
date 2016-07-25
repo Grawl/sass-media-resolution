@@ -1,5 +1,7 @@
 # media-resolution.sass
 
+> I created this library before Autoprefixer handle `resolution` rule, and now I just removed prefixes from Sass code and don't want to rewrite a whole readme.
+
 ### Media Queries Resolution feature Sass polyfill
 
 If you want to engage your stylesheet with “retina-ready” images (actually `hdpi` or `xhdpi`) with `@2x` size for example you need to wrap your style with a huge `@media` query:
